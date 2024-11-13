@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="UAVjava1.8:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/UAVjava1_8_jar</output-path>
+    <root id="archive" name="UAVjava1.8.jar">
+      <element id="module-output" name="UAVjava1.8" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../archivos delibreria jar/commons-math3-3.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../archivos delibreria jar/javacsv.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../archivos delibreria jar/mysql-connector-java-8.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../jfoenix-8.0.10.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

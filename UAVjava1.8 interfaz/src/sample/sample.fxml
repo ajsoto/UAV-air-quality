@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<SplitPane dividerPositions="0.2508710801393728" orientation="VERTICAL" prefHeight="578.0" prefWidth="808.0" style="-fx-border-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <items>
+      <HBox fillHeight="false" prefHeight="8.0" prefWidth="804.0">
+         <children>
+            <AnchorPane prefHeight="151.0" prefWidth="212.0" style="-fx-background-color: #F7F3F3;">
+               <children>
+                  <ImageView fitHeight="110.0" fitWidth="184.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="150.0" prefWidth="397.0" style="-fx-background-color: #F7F3F3;">
+               <children>
+                  <Label layoutX="1.0" layoutY="-6.0" prefHeight="73.0" prefWidth="396.0" text="MEDICIÓN DE CONTAMINACIÓN POR MATERIAL PARTICULADO " textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </Label>
+                  <ImageView fx:id="arrow_inicio" fitHeight="28.0" fitWidth="32.0" layoutX="40.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/airplane_26px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="arrow_medidas" fitHeight="45.0" fitWidth="32.0" layoutX="129.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/airplane_26px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="arrow_estandares" fitHeight="45.0" fitWidth="32.0" layoutX="229.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/airplane_26px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="arrow_soporte" fitHeight="45.0" fitWidth="32.0" layoutX="324.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/airplane_26px.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton id="boton1" fx:id="boton1" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="1.0" layoutX="17.0" layoutY="60.0" onMouseClicked="#onInicionButtonClicked" prefHeight="74.0" prefWidth="74.0" style="-fx-border-color: #000000; -fx-border-radius: 100; -fx-border-width: 1.5; -fx-background-radius: 100;" styleClass="clasegenear" stylesheets="@stile1.css" text=" " AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="306.0" AnchorPane.topAnchor="60.0">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/ICONOS/BotonInicio1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="109.0" layoutY="60.0" onMouseClicked="#onMedidasButtonClicked" prefHeight="56.0" prefWidth="74.0" style="-fx-border-color: #000000; -fx-border-radius: 100; -fx-border-width: 1.5; -fx-background-radius: 100;" text=" " AnchorPane.topAnchor="60.0">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="50.0" onMouseClicked="#onMedidasButtonClicked" pickOnBounds="true">
+                           <image>
+                              <Image url="@image/ICONOS/BotonMedidas2.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" cacheShape="false" centerShape="false" contentDisplay="CENTER" ellipsisString="" layoutX="207.0" layoutY="60.0" maxWidth="77.0" onMouseClicked="#onEstandaresButtonClicked" prefHeight="56.0" prefWidth="74.0" style="-fx-border-radius: 100; -fx-border-width: 1.5; -fx-border-color: #000000; -fx-background-radius: 100;" text=" " textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="207.0" AnchorPane.rightAnchor="116.0" AnchorPane.topAnchor="60.0">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="44.0" fitWidth="45.0" onMouseClicked="#onEstandaresButtonClicked" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@image/ICONOS/BotonEstandares1.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="302.0" layoutY="60.0" maxHeight="73.0" maxWidth="74.0" onMouseClicked="#onSoporteButtonClicked" prefHeight="56.0" prefWidth="74.0" style="-fx-border-color: #000000; -fx-border-radius: 100; -fx-border-width: 1.5; -fx-background-radius: 100;" text=" ">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="56.0" fitWidth="50.0" onMouseClicked="#onSoporteButtonClicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/ICONOS/BotonMedidas1.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="150.0" prefWidth="196.0" style="-fx-background-color: #F7F3F3;">
+               <children>
+                  <ImageView fitHeight="133.0" fitWidth="166.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/ufps.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="415.0" prefWidth="804.0">
+         <children>
+            <AnchorPane fx:id="panel_inicio" layoutY="2.0" prefHeight="411.0" prefWidth="806.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Separator layoutX="204.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="204.0" AnchorPane.topAnchor="0.0" />
+                  <JFXButton contentDisplay="TOP" layoutX="18.0" layoutY="66.0" onMouseClicked="#VerUAV" prefHeight="138.0" prefWidth="165.0" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-background-radius: 10;" text="UAV">
+                     <graphic>
+                        <ImageView fitHeight="99.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/UAV.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton contentDisplay="TOP" layoutX="18.0" layoutY="220.0" onMouseClicked="#VerSistema" prefHeight="138.0" prefWidth="165.0" style="-fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="Sistema de Mediciones" textAlignment="CENTER" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="79.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/SistemaMedicion.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <ScrollPane fx:id="UAVShow" layoutX="210.0" prefHeight="410.0" prefWidth="591.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="455.0" prefWidth="572.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Label layoutX="139.0" layoutY="14.0" text="Vehiculo Aereo no Tripulado (UAV)">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Label contentDisplay="CENTER" layoutX="96.0" layoutY="401.0" text="Tipo de UAV: Ala Zagi &#10;Envergadura: 1.2m &#10;Materiales: Poliestireno, Balso, Aluminio, Papel vinilo &#10;Peso: 0.8812kg &#10;Motores: Brushless Turnigy 2200KV &#10;Speed Control: 30A&#10;Autonomía: 15 ±2 minutos &#10;Carga paga: 400 g&#10;Voltaje de operación: 11v&#10;&#10;" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Eras Demi ITC" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="162.0" layoutY="373.0" text="Especificaciones Tecnicas">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane fx:id="primaryStage" layoutX="4.0" layoutY="41.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="571.0">
+                                 <children>
+                                    <ImageView fx:id="mainImageView" fitHeight="235.0" fitWidth="318.0" layoutX="127.0" pickOnBounds="true" preserveRatio="true">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ScrollPane fx:id="scrollPane" layoutY="220.0" prefHeight="79.0" prefWidth="571.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <content>
+                                          <HBox fx:id="imagesStore" prefWidth="563.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <ScrollPane fx:id="SistemaShow" layoutX="220.0" layoutY="11.0" prefHeight="410.0" prefWidth="591.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="455.0" prefWidth="572.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Label layoutX="200.0" layoutY="15.0" text="Sistema de Mediciòn">
+                                 <font>
+                                    <Font name="Eras Demi ITC" size="15.0" />
+                                 </font>
+                                 <effect>
+                                    <Blend />
+                                 </effect>
+                              </Label>
+                              <Label contentDisplay="CENTER" layoutX="151.0" layoutY="361.0" text="Sensor de Material particulado PM10/2.5&#10;Sensor de humedad y temperatura DHT22&#10;GPS neo-6m&#10;Voltaje de operación 5v&#10;Sistema Modular&#10;Microprocesador Raspberry Pi 3B+&#10;Protocolo de Comunicacion serial y digital " textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Eras Demi ITC" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="162.0" layoutY="295.0" text="Especificaciones Tecnicas">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane fx:id="primaryStage1" layoutX="-7.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="571.0">
+                                 <children>
+                                    <ImageView fx:id="mainImageView1" fitHeight="235.0" fitWidth="318.0" layoutX="127.0" pickOnBounds="true" preserveRatio="true">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ScrollPane fx:id="scrollPane1" layoutY="220.0" prefHeight="79.0" prefWidth="571.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <content>
+                                          <HBox fx:id="imagesStore1" prefWidth="563.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <Label layoutX="39.0" layoutY="27.0" text="Ficha Tecnica">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="arrowUAVShow" fitHeight="38.0" fitWidth="22.0" layoutX="183.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/arrowRigth.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="arrowSistemaShow" fitHeight="38.0" fitWidth="22.0" layoutX="183.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@image/arrowRigth.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_medidas" prefHeight="333.0" prefWidth="732.0" style="-fx-background-color: #FFFFFF;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="615.0" layoutY="41.0" text="Variable:">
+                     <font>
+                        <Font name="Eras Demi ITC" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXButton alignment="CENTER" layoutX="627.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#onHistoricoButtonClicked" prefHeight="49.0" prefWidth="155.0" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-border-width: 1.5; -fx-background-radius: 10;" text="HISTORICO">
+                     <font>
+                        <Font name="Eras Demi ITC" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/ICONOS/statistics.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="RIGHT" layoutX="627.0" layoutY="242.0" onMouseClicked="#onDescargasButtonClicked" pickOnBounds="false" prefHeight="49.0" prefWidth="155.0" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-border-width: 1.5; -fx-background-radius: 10;" text="DESCARGAS">
+                     <font>
+                        <Font name="Eras Demi ITC" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/ICONOS/export_csv.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Label layoutX="649.0" layoutY="305.0" text="CALIDAD DEL AIRE">
+                     <font>
+                        <Font name="Eras Demi ITC" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="649.0" layoutY="331.0" prefHeight="30.0" prefWidth="112.0" style="-fx-border-color: #FFFFFF;" />
+                  <WebView fx:id="webView" layoutY="7.0" prefHeight="419.0" prefWidth="609.0" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" />
+                  <Label layoutX="616.0" layoutY="72.0" text="Fecha:">
+                     <font>
+                        <Font name="Eras Demi ITC" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXButton alignment="CENTER" layoutX="627.0" layoutY="130.0" onMouseClicked="#onEstadisticaButtonClicked" pickOnBounds="false" prefHeight="48.0" prefWidth="155.0" style="-fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 10; -fx-background-radius: 10;" text="ESTADISTICA">
+                     <font>
+                        <Font name="Eras Demi ITC" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/ICONOS/combo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXComboBox fx:id="ComboVariables" layoutX="677.0" layoutY="32.0" onAction="#VariableMapa" prefHeight="29.0" prefWidth="100.0" promptText="VARIABLE">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXComboBox>
+                  <JFXComboBox fx:id="ComboFechaMapa" layoutX="677.0" layoutY="70.0" onAction="#FechaMapa" prefHeight="29.0" prefWidth="100.0" promptText="DD/MM/AA">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXComboBox>
+                  <VBox fx:id="Temperatura" layoutX="543.0" layoutY="80.0" prefHeight="179.0" prefWidth="59.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #00FFFFC0;" text="&lt;15°">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="156.0" style="-fx-background-color: #0000FFC0;" text="≥15  &lt;20" textAlignment="CENTER">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #f8f32bC0;" text="≥20 &lt;25" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="13.0" />
+                           </font></Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: ff7514c0;" text="≥25 &lt;30&#10;" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font></Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: ff0000C0;" text="≥30 &lt;35" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font></Label>
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="112.0" style="-fx-background-color: #7d2181c0;" text="≥35">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </VBox>
+                  <HBox fx:id="PM" layoutX="56.0" layoutY="11.0" prefHeight="39.0" prefWidth="535.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #00b347C0;" text="BUENA">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #f8f32bC0;" text="ACEPTABLE" textAlignment="CENTER">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: ff7514c0;" text="MALA" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: ff0000C0;" text="DAÑINA PARA LA SALUD&#10;" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="98.0" style="-fx-background-color: #7d2181c0;" text="MUY DAÑINA PARA LA SALUD" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: #804000C0;" text="PELIGROSO">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="Hum" layoutX="538.0" layoutY="81.0" prefHeight="179.0" prefWidth="63.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #00FFFFC0;" text="&lt;17">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="156.0" style="-fx-background-color: #0000FFC0;" text="≥17 &lt;38" textAlignment="CENTER">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #f8f32bC0;" text="≥38 &lt;50" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: ff7514c0;" text="≥50 &lt;67" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="114.0" style="-fx-background-color: ff0000C0;" text="≥67 &lt; 83" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="112.0" style="-fx-background-color: #7d2181c0;" text="≥83">
+                           <font>
+                              <Font name="Eras Demi ITC" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Separator layoutX="606.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_estandares" prefHeight="413.0" prefWidth="808.0" style="-fx-background-color: #FFFFFF;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox fillWidth="false" layoutX="14.0" layoutY="78.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="235.0" prefWidth="172.0" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="622.0">
+                     <children>
+                        <JFXButton fx:id="ButtonPM" onAction="#VerEstandarPM" prefHeight="70.0" prefWidth="178.0" style="-fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 10; -fx-background-radius: 10;" text="PM 10.0/2.5">
+                           <graphic>
+                              <ImageView fitHeight="58.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/particle.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Eras Demi ITC" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+                        <JFXButton fx:id="ButtonH" onAction="#VerEstandarH" prefHeight="70.0" prefWidth="178.0" style="-fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 10; -fx-background-radius: 10;" text="HUMEDAD">
+                           <graphic>
+                              <ImageView fitHeight="58.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/Humidity.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Eras Demi ITC" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+                        <JFXButton fx:id="ButttonT" onAction="#VerEstandarT" prefHeight="70.0" prefWidth="178.0" style="-fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 10; -fx-background-radius: 10;" text="TEMPERATURA">
+                           <graphic>
+                              <ImageView fitHeight="58.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/thermometer.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Eras Demi ITC" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <Separator layoutX="204.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fx:id="arrowPM" fitHeight="29.0" fitWidth="22.0" layoutX="187.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/arrowRigth.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="arrowH" fitHeight="29.0" fitWidth="22.0" layoutX="187.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@image/arrowRigth.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="arrowT" fitHeight="29.0" fitWidth="22.0" layoutX="187.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@image/arrowRigth.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane fx:id="EstandarPM" layoutX="204.0" prefHeight="419.0" prefWidth="603.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="235.0" fitWidth="571.0" layoutX="27.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/estandaresCalidadFormato.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="108.0" layoutY="373.0" prefHeight="39.0" prefWidth="406.0" text="Medidas Segun el Ministerio de Ambiente y Desarrollo   Sostenible Resolucion 2254 del 01/NOV/2017" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="13.0" layoutY="58.0" prefHeight="73.0" prefWidth="579.0" text="Se denomina material particulado (PM) a una mezcla de partículas líquidas y sólidas de sustancias orgánicas e inorgánicas, en suspensión en el aire, estas forman parte de la contaminación del aire. además, este se clasifica según su tamaño, donde  PM 10 (µm) son las de mayor tamaño y  PM 2.5 (µm) son las partículas finas." textAlignment="JUSTIFY" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="130.0" layoutY="23.0" text="¿Que es el Material Particulado?">
+                           <font>
+                              <Font name="Eras Demi ITC" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="EstandarH" layoutX="86.0" layoutY="-22.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="133.0" layoutY="25.0" text="¿Que es la Humedad Relativa?">
+                           <font>
+                              <Font name="Eras Demi ITC" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="33.0" layoutY="305.0" prefHeight="102.0" prefWidth="542.0" text="Es una medida de la concentración de vapor de agua en la atmósfera; esta a su vez depende de la temperatura y de la presion del ambiente, La humedad relativa influye en la calidad del aire debido a que aumenta el tamaño y la densidad de las partículas suspendidas en el aire como el material particulado al observarse variaciones de humedad en el ambiente." textAlignment="JUSTIFY" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="235.0" fitWidth="318.0" layoutX="145.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="119.091796875" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="139.0" AnchorPane.topAnchor="75.0">
+                           <image>
+                              <Image url="@image/Humedad.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="EstandarT" layoutX="31.0" layoutY="263.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="156.0" layoutY="20.0" text="¿Que es la Temperatura?">
+                           <font>
+                              <Font name="Eras Demi ITC" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="16.0" layoutY="282.0" prefHeight="125.0" prefWidth="571.0" text="La temperatura es una magnitud física que refleja la cantidad de energia en forma de calor , que presentra un cuerpo, o el medio ambiente.   Ademas, esta variable es considerada en correlacion a los efectos de la contaminacion del aire yta que al considerarvariaciones de humedad y temperatura tambien se presentan en los indices de calidad del aire" textAlignment="JUSTIFY" wrapText="true">
+                           <font>
+                              <Font name="Eras Demi ITC" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="235.0" fitWidth="318.0" layoutX="145.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="160.46444702148438" AnchorPane.topAnchor="64.0">
+                           <image>
+                              <Image url="@image/Temperatura.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+                  <Label layoutX="46.0" layoutY="28.0" text="Estandares">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_soporte" prefHeight="336.0" prefWidth="732.0" style="-fx-background-color: #FFFFFF;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="307.0" fitWidth="499.0" layoutX="96.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="213.20745849609375" AnchorPane.topAnchor="17.0">
+                     <image>
+                        <Image url="@image/Ayuda.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="98.0" layoutY="162.0" text="AUTORES">
+                     <font>
+                        <Font name="Eras Demi ITC" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Label>
+                  <Label layoutX="48.0" layoutY="187.0" text="Jeison E. Eslava P.&#10;Franyer A. Martinez S.&#10;Ángelo J. Soto V.&#10;Edwin J. Vera R.&#10;Dinael Guevara I." textAlignment="CENTER">
+                     <font>
+                        <Font name="Eras Demi ITC" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="nameWH" layoutX="602.0" layoutY="94.0" onMouseClicked="#CallLLamada" text="GrupoPM_UFPS_IE" textFill="#3300ff" underline="true">
+                     <font>
+                        <Font name="Eras Demi ITC" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="NameMail" layoutX="601.0" layoutY="156.0" onMouseClicked="#CallCorreo" prefWidth="336.0" text="MonitoreoMaterial&#10;Particulado@gmail.com" textFill="#3300ff" underline="true" wrapText="true">
+                     <font>
+                        <Font name="Eras Demi ITC" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="NameUbicacion" layoutX="601.0" layoutY="220.0" onMouseClicked="#CallUbicacion" text="Cucuta/Colombia" textFill="#3300ff" underline="true">
+                     <font>
+                        <Font name="Eras Demi ITC" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Label>
+                  <Label layoutX="314.0" layoutY="333.0" text="AYUDA Y SOPORTE" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Eras Demi ITC" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Label>
+                  <Label layoutX="147.0" layoutY="349.0" text="Version 1.0  Programacion en  JAVA y MySQL      Año 2020&#10;Software Educativo e Informativo" textAlignment="CENTER">
+                     <font>
+                        <Font name="Eras Demi ITC" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Label>
+                  <ImageView fitHeight="22.0" fitWidth="28.0" layoutX="393.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/ICONOS/Ayuda1.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+            <AnchorPane fx:id="panel_historico" prefHeight="333.0" prefWidth="732.0" style="-fx-background-color: #FFFFFF;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <LineChart fx:id="graficaH" layoutX="14.0" layoutY="46.0" prefHeight="341.0" prefWidth="591.0" style="-fx-border-color: #FFFFFF;">
+                     <xAxis>
+                        <NumberAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+                  <Label layoutX="672.0" layoutY="220.0" text="Hasta:">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="671.0" layoutY="136.0" text="Desde:">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="GraficarHis" layoutX="641.0" layoutY="312.0" onMouseClicked="#GraficarHist" prefHeight="50.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 10; -fx-background-radius: 10;" text="GRAFICAR">
+                     <font>
+                        <Font name="Eras Demi ITC" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXComboBox fx:id="ComboDtFinHis" layoutX="641.0" layoutY="260.0" onAction="#onDateHiFin" prefHeight="28.0" prefWidth="111.0" promptText="DD/MM/AA">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXComboBox>
+                  <JFXComboBox fx:id="ComboDtInHis" layoutX="641.0" layoutY="166.0" onAction="#onHistDate" prefHeight="28.0" prefWidth="112.0" promptText="DD/MM/AA">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXComboBox>
+                  <Label layoutX="198.0" layoutY="12.0" text="Diagrama Cronologico ">
+                     <font>
+                        <Font name="Imprint MT Shadow" size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="ComboVariableHis" layoutX="639.0" layoutY="87.0" prefHeight="28.0" prefWidth="118.0" promptText="Variable">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXComboBox>
+                  <Label layoutX="664.0" layoutY="46.0" text="Variable:">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_estadistica" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView fx:id="tabla" layoutX="29.0" layoutY="272.0" prefHeight="125.0" prefWidth="762.0">
+                     <columns>
+                        <TableColumn fx:id="Muestra" prefWidth="75.0" text="Muestra" />
+                        <TableColumn fx:id="Media" prefWidth="75.0" text="Media" />
+                        <TableColumn fx:id="Mediana" prefWidth="75.0" text="Mediana" />
+                        <TableColumn fx:id="Moda" prefWidth="75.0" text="Moda" />
+                        <TableColumn fx:id="Desv" prefWidth="75.0" text="Desv.std" />
+                        <TableColumn fx:id="Vmax" prefWidth="75.0" text="Valor Max" />
+                        <TableColumn fx:id="Vmin" prefWidth="77.0" text="Valor Min" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="64.0" layoutY="25.0" prefHeight="18.0" prefWidth="75.0" text="Variable">
+                     <font>
+                        <Font name="Eras Demi ITC" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="ComboVariableEstadistica" layoutX="46.0" layoutY="60.0" prefHeight="28.0" prefWidth="112.0" promptText="Variable">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXComboBox>
+                  <JFXComboBox fx:id="ComboDtEstd" layoutX="46.0" layoutY="109.0" onAction="#onDateEstd" prefHeight="28.0" prefWidth="112.0" promptText="Fecha">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXComboBox>
+                  <BarChart fx:id="EstadisticHistogram" layoutX="175.0" layoutY="12.0" prefHeight="249.0" prefWidth="591.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" fx:id="xAxisBar" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="yAxisBar" side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <JFXComboBox fx:id="ComboDTFinEstd" layoutX="49.0" layoutY="167.0" onAction="#HabilitarMostrar" prefHeight="25.0" prefWidth="110.0" promptText="Fecha">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXComboBox>
+                  <JFXButton fx:id="MostrarEstd" layoutX="64.0" layoutY="220.0" mnemonicParsing="false" onAction="#MostrarEstadistica" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-border-width: 1.5; -fx-background-radius: 10;" text="Mostrar">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panel_descargas" prefHeight="405.0" prefWidth="798.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="441.0" fitWidth="734.0" layoutX="36.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/uav.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton layoutX="193.0" layoutY="311.0" onAction="#Descargar" prefHeight="41.0" prefWidth="165.0" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-border-width: 1;" text="DESCARGAR">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXComboBox fx:id="fechaDowI" layoutX="220.0" layoutY="126.0" onAction="#OnDescargaDate" prefHeight="34.0" prefWidth="130.0" promptText="Fecha de Inicio" />
+                  <JFXComboBox fx:id="fechaDowF" layoutX="193.0" layoutY="178.0" prefHeight="34.0" prefWidth="113.0" promptText="Fecha fin" />
+                  <Label layoutX="192.0" layoutY="14.0" text="PANEL DE DESCARGA DE DATOS">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <Separator prefHeight="1.0" prefWidth="808.0" style="-fx-background-color: #000000;" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

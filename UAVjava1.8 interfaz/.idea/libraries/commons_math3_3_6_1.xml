@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="commons-math3-3.6.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../archivos delibreria jar/commons-math3-3.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../archivos delibreria jar/javacsv.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../archivos delibreria jar/mysql-connector-java-8.0.20.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
